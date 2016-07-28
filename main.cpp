@@ -7,7 +7,7 @@ int main() {
     cout << "in Main" << endl;
 
     ifstream routeMap;
-    routeMap.open ("/Users/willturner/Desktop/route.txt");
+    routeMap.open ("/Users/willturner/ClionProjects/TrafficRouting/route.txt");
 
     string myArray[14];
 
