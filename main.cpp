@@ -10,7 +10,8 @@ int main() {
   
   // Read the route and throw an error if something goes wrong
   std::ifstream routeMap;
-  routeMap.open ("route.txt");
+//  routeMap.open ("route.txt");
+    routeMap.open ("/Users/willturner/CLionProjects/TrafficRouting/route.txt");
   if(!routeMap){std::cout << "Error: Route map not found" << std::endl;}
 
   // Find out some information about the map file; width and height.
@@ -47,9 +48,7 @@ int main() {
   }
   routeMap.close();
 
-  // We now have the world loaded into the vector MapVector[][].
-  
-  
+  // We now have the world loaded into the vector MapVector[][]
 
   return 0;
 }
