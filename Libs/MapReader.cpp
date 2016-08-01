@@ -35,6 +35,7 @@ MapReader::MapReader(std::string file_path)
   }
   routeMap.close();
 }
+
 MapReader::~MapReader()
 {
   std::cout << "Deleting Map Object" << std::endl;
@@ -52,5 +53,14 @@ int MapReader::GetMaxWidth()
 
 void MapReader::Print()
 {
-  //Implement a printing method to the screen 
+  //Implement a printing method to the screen
+  //Looks a bit weird, could be improved
+  int j=0;
+  while ( j < number_of_lines ) {
+    for(int i=0; i < MapVector.size(); ++i){
+      std::cout << MapVector[i][j];
+    }
+    j++;
+    std::cout << std::endl;
+  }
 }

@@ -1,4 +1,4 @@
-# Create a library called "Hello" which includes the source file "MapReader.cpp".
+# Create a library called "MapReader" which includes the source file "MapReader.cpp".
 # The extension is already found. Any number of sources could be listed here.
 add_library (MapReader MapReader.cpp)
 
