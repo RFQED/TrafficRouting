@@ -21,7 +21,7 @@ class MapReader
     unsigned int number_of_lines = 0;
     unsigned int max_width       = 0;
 
-  // Holds the map details
+    // Holds the map details
     std::vector<std::vector<char> > MapVector;
 };
 

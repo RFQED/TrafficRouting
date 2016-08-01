@@ -2,7 +2,7 @@
 #include <fstream>
 #include "Libs/MapReader.hpp"
 
-// Author: Adam Roberts
+// Author: NOT Adam Roberts
 // Put the Map Reading stuff into its own class
 
 int main() {
