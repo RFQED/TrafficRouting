@@ -12,13 +12,13 @@ MapReader::MapReader(std::string file_path)
 
   std::string line;
   while(getline(routeMap, line)){
-    number_of_lines++;
-    if(line.length()>max_width){max_width=line.length();}
+    fnumber_of_lines++;
+    if(line.length()>fmax_width){fmax_width=line.length();}
   }
 
-  MapVector.resize(max_width);
-  for(int i=0; i<MapVector.size(); ++i){
-    MapVector[i].resize(number_of_lines);
+  fMapVector.resize(fmax_width);
+  for(int i=0; i<fMapVector.size(); ++i){
+    fMapVector[i].resize(fnumber_of_lines);
   }
 
   // Read the route into the vector
@@ -28,7 +28,7 @@ MapReader::MapReader(std::string file_path)
   {unsigned int linenumber = 0;
     while(getline(routeMap,line)){
       for(int i=0; i<line.length(); ++i){
-        MapVector[i][linenumber] = line[i];
+        fMapVector[i][linenumber] = line[i];
       }
       linenumber++;
     }
@@ -43,12 +43,12 @@ MapReader::~MapReader()
 
 int MapReader::GetNumLines()
 {
-  return number_of_lines;
+  return fnumber_of_lines;
 }
   
 int MapReader::GetMaxWidth()
 {
-  return max_width;
+  return fmax_width;
 }
 
 void MapReader::Print()
@@ -56,9 +56,9 @@ void MapReader::Print()
   //Implement a printing method to the screen
   //Looks a bit weird, could be improved
   int j=0;
-  while ( j < number_of_lines ) {
-    for(int i=0; i < MapVector.size(); ++i){
-      std::cout << MapVector[i][j];
+  while ( j < fnumber_of_lines ) {
+    for(int i=0; i < fMapVector.size(); ++i){
+      std::cout << fMapVector[i][j];
     }
     j++;
     std::cout << std::endl;

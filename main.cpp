@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include "Libs/MapReader.hpp"
+#include "Libs/CountAlgo.hpp"
 
 // Author: NOT Adam Roberts
 // Put the Map Reading stuff into its own class
@@ -14,7 +15,7 @@ int main() {
   MapReader a_map("route.txt");
 
   std::cout << "The world map is " << a_map.GetNumLines() << " elements tall" 
-            << " and is at most " << a_map.GetMaxWidth() << " elements wide" << std::endl;
+            << " and is at most "  << a_map.GetMaxWidth() << " elements wide" << std::endl;
   
   // We now have the world loaded into an "a_map" object
 
@@ -24,6 +25,16 @@ int main() {
 
   std::cout << "\nPrint an element of the vector\n ";
   std::cout << a_map.GetMapVector()[1][1] << std::endl;
+
+  a_map.SetMapVector()[1][1] = "@";
+
+  a_map.Print();
+  
+  std::string init_string = "#";
+  CountAlgo dummy_algo(init_string);
+
+  std::cout << "Doing a thing with the map \n" ;
+  std::cout << dummy_algo.TestAlgo(a_map) << std::endl;
   
   return 0;
 }
