@@ -7,4 +7,6 @@ add_subdirectory(Libs)
 
 set(SOURCE_FILES main.cpp)
 add_executable(TrafficRouting ${SOURCE_FILES})
-target_link_libraries(TrafficRouting MapReader)
+
+target_link_libraries(TrafficRouting MapReader CountAlgo AlgoABC)
+
