@@ -30,10 +30,10 @@ int main() {
 
   a_map.Print();
   
-  std::string init_string = "#";
+  std::string init_string = "*";
   CountAlgo dummy_algo(init_string);
 
-  std::cout << "Doing a thing with the map \n" ;
+  std::cout << "Counting matching characters for {"<< init_string << "} map \n" ;
   std::cout << dummy_algo.TestAlgo(a_map) << std::endl;
   
   return 0;

@@ -19,7 +19,17 @@ public:
   const std::vector<std::vector<std::string> > & GetMapVector() const {return fMapVector;}
   // Allow changes to map vector
   std::vector<std::vector<std::string> > & SetMapVector()       {return fMapVector;}
+
+  // Typedef these vector iterators to make any subsequent changes easier
+  typedef std::vector< std::string > :: const_iterator const_vec_str;
+  typedef std::vector< std::vector< std::string> > :: const_iterator const_vec_vec_str;
   
+  // Return iterators to the vector to allow looping over the map outside the class
+  // const_vec_str begin_lines() const {return fMapVector.begin()->begin();}
+  // const_vec_str end_lines()   const {return fMapVector.end()->end();}
+  const_vec_vec_str begin_width() const {return fMapVector.begin();}
+  const_vec_vec_str end_width()   const {return fMapVector.end();}
+
 private:
   unsigned int fnumber_of_lines = 0;
   unsigned int fmax_width       = 0;
@@ -27,8 +37,6 @@ private:
   // Holds the map details
   std::vector< std::vector< std::string> > fMapVector;
 
-  // std::vector< std::string > ::iterator fCols;
-  // std::vector< std::vector< std::string> > ::iterator fRows;
 };
 
 

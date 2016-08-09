@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include <string>
 #include "CountAlgo.hpp"
 
@@ -21,10 +22,16 @@ CountAlgo::CountAlgo(std::string search_char)
 
 double CountAlgo::TestAlgo(MapReader & map)
 {
-  //  map.GetMapvector
-  //for (int i )
-
-  return -999;
+  double match_counter = 0;
+  // Iterate over the MapReader vector object
+  for ( MapReader::const_vec_vec_str iter_lines = map.begin_width(); iter_lines != map.end_width(); ++iter_lines){
+    for ( MapReader::const_vec_str iter_width = (*iter_lines).begin(); iter_width != (*iter_lines).end(); ++iter_width){
+      if (*iter_width == fSearchChar) {
+        match_counter++;
+      }
+    }
+  }
+  return match_counter;
 }
 
 CountAlgo::~CountAlgo()
